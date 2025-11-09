@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AjedrezNocturno - Problemas de Ajedrez</title>
+
+    <!-- Chessboard CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>♟️ AjedrezNocturno</h1>
+            <p class="subtitle">Resuelve problemas de ajedrez de Lichess</p>
+        </header>
+
+        <main>
+            <div class="content-wrapper">
+                <!-- Sección del Tablero -->
+                <div class="chess-section">
+                    <div class="puzzle-info">
+                        <div class="info-item">
+                            <span class="label">Dificultad:</span>
+                            <span id="puzzle-rating" class="value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Turno:</span>
+                            <span id="side-to-move" class="value">-</span>
+                        </div>
+                    </div>
+
+                    <div id="board" class="chess-board"></div>
+
+                    <div class="puzzle-objective">
+                        <p id="objective">Cargando problema...</p>
+                    </div>
+
+                    <div class="controls">
+                        <button id="new-puzzle-btn" class="btn btn-primary">
+                            🎲 Nuevo Problema
+                        </button>
+                        <button id="show-solution-btn" class="btn btn-secondary" disabled>
+                            💡 Mostrar Solución
+                        </button>
+                    </div>
+
+                    <div id="message" class="message"></div>
+                </div>
+
+                <!-- Sección de Dato Curioso -->
+                <div class="trivia-section">
+                    <h2>📚 Dato Curioso</h2>
+                    <div id="trivia-content" class="trivia-content">
+                        <p>Cargando dato curioso...</p>
+                    </div>
+                    <button id="new-trivia-btn" class="btn btn-trivia">
+                        🔄 Otro Dato
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Problemas cortesía de <a href="https://lichess.org" target="_blank">Lichess.org</a></p>
+        </footer>
+    </div>
+
+    <!-- jQuery (required for chessboard.js) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Chess.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+
+    <!-- Chessboard.js -->
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
